@@ -1,0 +1,141 @@
+2023-08-27 02:54:14,122 - INFO - Save log to /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa
+2023-08-27 02:54:14,122 - INFO - --------------- Configuration ---------------
+2023-08-27 02:54:14,122 - INFO - Parameters: 
+log_dir: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa
+pretrained: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/training/pretrained/xception-b5690688.pth
+model_name: fwa
+backbone_name: xception
+backbone_config: {'mode': 'original', 'num_classes': 2, 'inc': 3, 'dropout': False}
+all_dataset: ['FaceForensics++', 'FF-F2F', 'FF-DF', 'FF-FS', 'FF-NT', 'FaceShifter', 'DeepFakeDetection', 'Celeb-DF-v1', 'Celeb-DF-v2', 'DFDCP', 'DFDC', 'DeeperForensics-1.0', 'UADFV']
+train_dataset: ['FF-NT']
+test_dataset: ['FF-NT']
+dataset_type: blend
+dataset_json_folder: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/preprocessing/dataset_json
+compression: c23
+train_batchSize: 16
+test_batchSize: 32
+workers: 8
+frame_num: {'train': 32, 'test': 32}
+resolution: 256
+with_mask: False
+with_landmark: False
+save_ckpt: True
+save_feat: True
+label_dict: {'DFD_fake': 1, 'DFD_real': 0, 'FF-SH': 1, 'FF-F2F': 1, 'FF-DF': 1, 'FF-FS': 1, 'FF-NT': 1, 'FF-FH': 1, 'FF-real': 0, 'CelebDFv1_real': 0, 'CelebDFv1_fake': 1, 'CelebDFv2_real': 0, 'CelebDFv2_fake': 1, 'DFDCP_Real': 0, 'DFDCP_FakeA': 1, 'DFDCP_FakeB': 1, 'DFDC_Fake': 1, 'DFDC_Real': 0, 'DF_fake': 1, 'DF_real': 0, 'UADFV_Fake': 1, 'UADFV_Real': 0}
+use_data_augmentation: False
+data_aug: {'flip_prob': 0.5, 'rotate_prob': 0.5, 'rotate_limit': [-10, 10], 'blur_prob': 0.5, 'blur_limit': [3, 7], 'brightness_prob': 0.5, 'brightness_limit': [-0.1, 0.1], 'contrast_limit': [-0.1, 0.1], 'quality_lower': 40, 'quality_upper': 100}
+mean: [0.5, 0.5, 0.5]
+std: [0.5, 0.5, 0.5]
+optimizer: {'type': 'adam', 'adam': {'lr': 0.0002, 'beta1': 0.9, 'beta2': 0.999, 'eps': 1e-08, 'weight_decay': 0.0005, 'amsgrad': False}, 'sgd': {'lr': 0.0002, 'momentum': 0.9, 'weight_decay': 0.0005}}
+lr_scheduler: None
+nEpochs: 10
+start_epoch: 0
+save_epoch: 1
+rec_iter: 100
+logdir: ./logs
+manualSeed: 1024
+loss_func: cross_entropy
+losstype: None
+metric_scoring: auc
+ngpu: 1
+cuda: True
+cudnn: True
+
+2023-08-27 02:54:32,830 - INFO - Save log to /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa
+2023-08-27 02:54:32,830 - INFO - Save log to /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa
+2023-08-27 02:54:32,831 - INFO - --------------- Configuration ---------------
+2023-08-27 02:54:32,831 - INFO - --------------- Configuration ---------------
+2023-08-27 02:54:32,831 - INFO - Parameters: 
+log_dir: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa
+pretrained: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/training/pretrained/xception-b5690688.pth
+model_name: fwa
+backbone_name: xception
+backbone_config: {'mode': 'original', 'num_classes': 2, 'inc': 3, 'dropout': False}
+all_dataset: ['FaceForensics++', 'FF-F2F', 'FF-DF', 'FF-FS', 'FF-NT', 'FaceShifter', 'DeepFakeDetection', 'Celeb-DF-v1', 'Celeb-DF-v2', 'DFDCP', 'DFDC', 'DeeperForensics-1.0', 'UADFV']
+train_dataset: ['FF-NT']
+test_dataset: ['FF-NT']
+dataset_json_folder: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/preprocessing/dataset_json
+compression: c23
+train_batchSize: 16
+test_batchSize: 32
+workers: 8
+frame_num: {'train': 32, 'test': 32}
+resolution: 256
+with_mask: False
+with_landmark: False
+save_ckpt: True
+save_feat: True
+label_dict: {'DFD_fake': 1, 'DFD_real': 0, 'FF-SH': 1, 'FF-F2F': 1, 'FF-DF': 1, 'FF-FS': 1, 'FF-NT': 1, 'FF-FH': 1, 'FF-real': 0, 'CelebDFv1_real': 0, 'CelebDFv1_fake': 1, 'CelebDFv2_real': 0, 'CelebDFv2_fake': 1, 'DFDCP_Real': 0, 'DFDCP_FakeA': 1, 'DFDCP_FakeB': 1, 'DFDC_Fake': 1, 'DFDC_Real': 0, 'DF_fake': 1, 'DF_real': 0, 'UADFV_Fake': 1, 'UADFV_Real': 0}
+use_data_augmentation: False
+data_aug: {'flip_prob': 0.5, 'rotate_prob': 0.5, 'rotate_limit': [-10, 10], 'blur_prob': 0.5, 'blur_limit': [3, 7], 'brightness_prob': 0.5, 'brightness_limit': [-0.1, 0.1], 'contrast_limit': [-0.1, 0.1], 'quality_lower': 40, 'quality_upper': 100}
+mean: [0.5, 0.5, 0.5]
+std: [0.5, 0.5, 0.5]
+optimizer: {'type': 'adam', 'adam': {'lr': 0.0002, 'beta1': 0.9, 'beta2': 0.999, 'eps': 1e-08, 'weight_decay': 0.0005, 'amsgrad': False}, 'sgd': {'lr': 0.0002, 'momentum': 0.9, 'weight_decay': 0.0005}}
+lr_scheduler: None
+nEpochs: 10
+start_epoch: 0
+save_epoch: 1
+rec_iter: 100
+logdir: ./logs
+manualSeed: 1024
+loss_func: cross_entropy
+losstype: None
+metric_scoring: auc
+ngpu: 1
+cuda: True
+cudnn: True
+
+2023-08-27 02:54:32,831 - INFO - Parameters: 
+log_dir: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa
+pretrained: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/training/pretrained/xception-b5690688.pth
+model_name: fwa
+backbone_name: xception
+backbone_config: {'mode': 'original', 'num_classes': 2, 'inc': 3, 'dropout': False}
+all_dataset: ['FaceForensics++', 'FF-F2F', 'FF-DF', 'FF-FS', 'FF-NT', 'FaceShifter', 'DeepFakeDetection', 'Celeb-DF-v1', 'Celeb-DF-v2', 'DFDCP', 'DFDC', 'DeeperForensics-1.0', 'UADFV']
+train_dataset: ['FF-NT']
+test_dataset: ['FF-NT']
+dataset_json_folder: /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/preprocessing/dataset_json
+compression: c23
+train_batchSize: 16
+test_batchSize: 32
+workers: 8
+frame_num: {'train': 32, 'test': 32}
+resolution: 256
+with_mask: False
+with_landmark: False
+save_ckpt: True
+save_feat: True
+label_dict: {'DFD_fake': 1, 'DFD_real': 0, 'FF-SH': 1, 'FF-F2F': 1, 'FF-DF': 1, 'FF-FS': 1, 'FF-NT': 1, 'FF-FH': 1, 'FF-real': 0, 'CelebDFv1_real': 0, 'CelebDFv1_fake': 1, 'CelebDFv2_real': 0, 'CelebDFv2_fake': 1, 'DFDCP_Real': 0, 'DFDCP_FakeA': 1, 'DFDCP_FakeB': 1, 'DFDC_Fake': 1, 'DFDC_Real': 0, 'DF_fake': 1, 'DF_real': 0, 'UADFV_Fake': 1, 'UADFV_Real': 0}
+use_data_augmentation: False
+data_aug: {'flip_prob': 0.5, 'rotate_prob': 0.5, 'rotate_limit': [-10, 10], 'blur_prob': 0.5, 'blur_limit': [3, 7], 'brightness_prob': 0.5, 'brightness_limit': [-0.1, 0.1], 'contrast_limit': [-0.1, 0.1], 'quality_lower': 40, 'quality_upper': 100}
+mean: [0.5, 0.5, 0.5]
+std: [0.5, 0.5, 0.5]
+optimizer: {'type': 'adam', 'adam': {'lr': 0.0002, 'beta1': 0.9, 'beta2': 0.999, 'eps': 1e-08, 'weight_decay': 0.0005, 'amsgrad': False}, 'sgd': {'lr': 0.0002, 'momentum': 0.9, 'weight_decay': 0.0005}}
+lr_scheduler: None
+nEpochs: 10
+start_epoch: 0
+save_epoch: 1
+rec_iter: 100
+logdir: ./logs
+manualSeed: 1024
+loss_func: cross_entropy
+losstype: None
+metric_scoring: auc
+ngpu: 1
+cuda: True
+cudnn: True
+
+2023-08-27 02:54:32,995 - INFO - Load pretrained model successfully!
+2023-08-27 02:54:32,995 - INFO - Load pretrained model successfully!
+2023-08-27 02:54:33,072 - INFO - ===> Epoch[0] start!
+2023-08-27 02:54:33,072 - INFO - ===> Epoch[0] start!
+2023-08-27 02:54:33,074 - INFO - data_dict saved to /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa/fwa_2023-08-27-02-54-33/train/FF-NT/data_dict_train.pickle
+2023-08-27 02:54:33,074 - INFO - data_dict saved to /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa/fwa_2023-08-27-02-54-33/train/FF-NT/data_dict_train.pickle
+2023-08-27 02:54:42,736 - INFO - Iter: 0    training-loss, overall: 0.6795498132705688    
+2023-08-27 02:54:42,736 - INFO - Iter: 0    training-loss, overall: 0.6795498132705688    
+2023-08-27 02:54:42,740 - INFO - Iter: 0    training-metric, acc: 0.5625    training-metric, auc: 0.5666666666666667    training-metric, eer: 0.3    training-metric, ap: 0.44166666666666665    
+2023-08-27 02:54:42,740 - INFO - Iter: 0    training-metric, acc: 0.5625    training-metric, auc: 0.5666666666666667    training-metric, eer: 0.3    training-metric, ap: 0.44166666666666665    
+2023-08-27 02:54:44,429 - INFO - ===> Test start!
+2023-08-27 02:54:44,429 - INFO - ===> Test start!
+2023-08-27 02:54:44,436 - INFO - data_dict saved to /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa/fwa_2023-08-27-02-54-33/test/FF-NT/data_dict_test.pickle
+2023-08-27 02:54:44,436 - INFO - data_dict saved to /Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/logs_analysis/fwa/fwa_2023-08-27-02-54-33/test/FF-NT/data_dict_test.pickle
