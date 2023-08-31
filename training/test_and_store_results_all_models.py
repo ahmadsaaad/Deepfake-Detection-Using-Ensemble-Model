@@ -87,7 +87,7 @@ ucf_model_path=model_pat+'/ucf/ckpt_best.pth'
 xception_detector_path='/Users/ahmedabdelaziz/Masters/Models/DeepfakeBench-main/training/config/detector/xception.yaml'
 xception_model_path=model_pat+'/xception/ckpt_best.pth'
 
-test_dataset=[ 'FF-NT','FF-F2F', 'FF-DF', 'FF-FS']
+test_dataset=[ 'FF-NT']
 
 
 
@@ -241,36 +241,36 @@ def main():
     core_model.load_state_dict(core_ckpt, strict=True)
     print('===> Load core checkpoint done!')
          
-    with open(efficientnetb4_detector_path, 'r') as f:
-          efficientnetb4_config = yaml.safe_load(f)
-    efficientnetb4_config['weights_path'] = efficientnetb4_model_path
-    # # prepare the model (efficientnetb4_detector)
-    efficientnetb4_model_class = DETECTOR[efficientnetb4_config['model_name']]
-    efficientnetb4_model = efficientnetb4_model_class(efficientnetb4_config).to(cpu_device)
-    efficientnetb4_ckpt = torch.load(efficientnetb4_model_path, map_location=cpu_device)
-    efficientnetb4_model.load_state_dict(efficientnetb4_ckpt, strict=True)
-    print('===> Load efficientnetb4 checkpoint done!')
+    # with open(efficientnetb4_detector_path, 'r') as f:
+    #       efficientnetb4_config = yaml.safe_load(f)
+    # efficientnetb4_config['weights_path'] = efficientnetb4_model_path
+    # # # prepare the model (efficientnetb4_detector)
+    # efficientnetb4_model_class = DETECTOR[efficientnetb4_config['model_name']]
+    # efficientnetb4_model = efficientnetb4_model_class(efficientnetb4_config).to(cpu_device)
+    # efficientnetb4_ckpt = torch.load(efficientnetb4_model_path, map_location=cpu_device)
+    # efficientnetb4_model.load_state_dict(efficientnetb4_ckpt, strict=True)
+    # print('===> Load efficientnetb4 checkpoint done!')
          
-    with open(f3net_detector_path, 'r') as f:
-          f3net_config = yaml.safe_load(f)
-    f3net_config['weights_path'] = f3net_model_path
-    # # prepare the model (f3net_detector)
-    f3net_model_class = DETECTOR[f3net_config['model_name']]
-    f3net_model = f3net_model_class(f3net_config).to(cpu_device)
-    f3net_ckpt = torch.load(f3net_model_path, map_location=cpu_device)
-    f3net_model.load_state_dict(f3net_ckpt, strict=True)
-    print('===> Load f3net checkpoint done!')
+    # with open(f3net_detector_path, 'r') as f:
+    #       f3net_config = yaml.safe_load(f)
+    # f3net_config['weights_path'] = f3net_model_path
+    # # # prepare the model (f3net_detector)
+    # f3net_model_class = DETECTOR[f3net_config['model_name']]
+    # f3net_model = f3net_model_class(f3net_config).to(cpu_device)
+    # f3net_ckpt = torch.load(f3net_model_path, map_location=cpu_device)
+    # f3net_model.load_state_dict(f3net_ckpt, strict=True)
+    # print('===> Load f3net checkpoint done!')
        
      
-    with open(ffd_detector_path, 'r') as f:
-          ffd_config = yaml.safe_load(f)
-    ffd_config['weights_path'] = ffd_model_path
-    # # prepare the model (FFD_detector)
-    ffd_model_class = DETECTOR[ffd_config['model_name']]
-    ffd_model = ffd_model_class(ffd_config).to(cpu_device)
-    ffd_ckpt = torch.load(ffd_model_path, map_location=cpu_device)
-    ffd_model.load_state_dict(ffd_ckpt, strict=True)
-    print('===> Load FFD checkpoint done!')
+    # with open(ffd_detector_path, 'r') as f:
+    #       ffd_config = yaml.safe_load(f)
+    # ffd_config['weights_path'] = ffd_model_path
+    # # # prepare the model (FFD_detector)
+    # ffd_model_class = DETECTOR[ffd_config['model_name']]
+    # ffd_model = ffd_model_class(ffd_config).to(cpu_device)
+    # ffd_ckpt = torch.load(ffd_model_path, map_location=cpu_device)
+    # ffd_model.load_state_dict(ffd_ckpt, strict=True)
+    # print('===> Load FFD checkpoint done!')
          
     with open(fwa_detector_path, 'r') as f:
         fwa_config = yaml.safe_load(f)
@@ -282,86 +282,86 @@ def main():
     fwa_model.load_state_dict(fwa_ckpt, strict=True)
     print('===> Load fwa checkpoint done!')
 
-    with open(meso4_detector_path, 'r') as f:
-        meso4_config = yaml.safe_load(f)
-    meso4_config['weights_path'] = meso4_model_path
-    # # prepare the model (meso4_detector)
-    meso4_model_class = DETECTOR[meso4_config['model_name']]
-    meso4_model = meso4_model_class(meso4_config).to(cpu_device)
-    meso4_ckpt = torch.load(meso4_model_path, map_location=cpu_device)
-    meso4_model.load_state_dict(meso4_ckpt, strict=True)
-    print('===> Load meso4 checkpoint done!')
+    # with open(meso4_detector_path, 'r') as f:
+    #     meso4_config = yaml.safe_load(f)
+    # meso4_config['weights_path'] = meso4_model_path
+    # # # prepare the model (meso4_detector)
+    # meso4_model_class = DETECTOR[meso4_config['model_name']]
+    # meso4_model = meso4_model_class(meso4_config).to(cpu_device)
+    # meso4_ckpt = torch.load(meso4_model_path, map_location=cpu_device)
+    # meso4_model.load_state_dict(meso4_ckpt, strict=True)
+    # print('===> Load meso4 checkpoint done!')
 
-    with open(recce_detector_path, 'r') as f:
-        meso4Inception_config = yaml.safe_load(f)
-    meso4Inception_config['weights_path'] =meso4Inception_model_path
-    #  # prepare the model (recce_detector)
-    meso4Inception_model_class = DETECTOR[meso4Inception_config['model_name']]
-    meso4Inception_model =meso4Inception_model_class(meso4Inception_config).to(cpu_device)
-    meso4Inception_ckpt = torch.load(meso4Inception_model_path, map_location=cpu_device)
-    meso4Inception_model.load_state_dict(meso4Inception_ckpt, strict=True)
-    print('===> Loadmeso4Inception checkpoint done!')     
+    # with open(recce_detector_path, 'r') as f:
+    #     meso4Inception_config = yaml.safe_load(f)
+    # meso4Inception_config['weights_path'] =meso4Inception_model_path
+    # #  # prepare the model (recce_detector)
+    # meso4Inception_model_class = DETECTOR[meso4Inception_config['model_name']]
+    # meso4Inception_model =meso4Inception_model_class(meso4Inception_config).to(cpu_device)
+    # meso4Inception_ckpt = torch.load(meso4Inception_model_path, map_location=cpu_device)
+    # meso4Inception_model.load_state_dict(meso4Inception_ckpt, strict=True)
+    # print('===> Loadmeso4Inception checkpoint done!')     
 
         
-    with open(recce_detector_path, 'r') as f:
-        recce_config = yaml.safe_load(f)
-    recce_config['weights_path'] = recce_model_path
-    # # prepare the model (recce_detector)
-    recce_model_class = DETECTOR[recce_config['model_name']]
-    recce_model = recce_model_class(recce_config).to(cpu_device)
-    recce_ckpt = torch.load(recce_model_path, map_location=cpu_device)
-    recce_model.load_state_dict(recce_ckpt, strict=True)
-    print('===> Load recce checkpoint done!')
+    # with open(recce_detector_path, 'r') as f:
+    #     recce_config = yaml.safe_load(f)
+    # recce_config['weights_path'] = recce_model_path
+    # # # prepare the model (recce_detector)
+    # recce_model_class = DETECTOR[recce_config['model_name']]
+    # recce_model = recce_model_class(recce_config).to(cpu_device)
+    # recce_ckpt = torch.load(recce_model_path, map_location=cpu_device)
+    # recce_model.load_state_dict(recce_ckpt, strict=True)
+    # print('===> Load recce checkpoint done!')
     
-    with open(resnet34_detector_path, 'r') as f:
-        resnet34_config = yaml.safe_load(f)
-    resnet34_config['weights_path'] = resnet34_model_path
-    # # prepare the model (resnet34_detector)
-    resnet34_model_class = DETECTOR[resnet34_config['model_name']]
-    resnet34_model = resnet34_model_class(resnet34_config).to(cpu_device)
-    resnet34_ckpt = torch.load(resnet34_model_path, map_location=cpu_device)
-    resnet34_model.load_state_dict(resnet34_ckpt, strict=True)
-    print('===> Load resnet34 checkpoint done!')
+    # with open(resnet34_detector_path, 'r') as f:
+    #     resnet34_config = yaml.safe_load(f)
+    # resnet34_config['weights_path'] = resnet34_model_path
+    # # # prepare the model (resnet34_detector)
+    # resnet34_model_class = DETECTOR[resnet34_config['model_name']]
+    # resnet34_model = resnet34_model_class(resnet34_config).to(cpu_device)
+    # resnet34_ckpt = torch.load(resnet34_model_path, map_location=cpu_device)
+    # resnet34_model.load_state_dict(resnet34_ckpt, strict=True)
+    # print('===> Load resnet34 checkpoint done!')
           
-    with open(spsl_detector_path, 'r') as f:
-      spsl_config = yaml.safe_load(f)
-    spsl_config['weights_path'] = spsl_model_path
-    # # prepare the model (SPSL_detector)
-    spsl_model_class = DETECTOR[spsl_config['model_name']]
-    spsl_model = spsl_model_class(spsl_config).to(mps_device)
-    spslckpt = torch.load(spsl_model_path, map_location=mps_device)
-    spsl_model.load_state_dict(spslckpt, strict=True)
-    print('===> Load SPSL checkpoint done!')
+    # with open(spsl_detector_path, 'r') as f:
+    #   spsl_config = yaml.safe_load(f)
+    # spsl_config['weights_path'] = spsl_model_path
+    # # # prepare the model (SPSL_detector)
+    # spsl_model_class = DETECTOR[spsl_config['model_name']]
+    # spsl_model = spsl_model_class(spsl_config).to(mps_device)
+    # spslckpt = torch.load(spsl_model_path, map_location=mps_device)
+    # spsl_model.load_state_dict(spslckpt, strict=True)
+    # print('===> Load SPSL checkpoint done!')
     
-    with open(srm_detector_path, 'r') as f:
-        srm_config = yaml.safe_load(f)
-    srm_config['weights_path'] = srm_model_path
-    # # prepare the model (srm_detector)
-    srm_model_class = DETECTOR[srm_config['model_name']]
-    srm_model = srm_model_class(srm_config).to(cpu_device)
-    srm_ckpt = torch.load(srm_model_path, map_location=cpu_device)
-    srm_model.load_state_dict(srm_ckpt, strict=True)
-    print('===> Load srm checkpoint done!')
+    # with open(srm_detector_path, 'r') as f:
+    #     srm_config = yaml.safe_load(f)
+    # srm_config['weights_path'] = srm_model_path
+    # # # prepare the model (srm_detector)
+    # srm_model_class = DETECTOR[srm_config['model_name']]
+    # srm_model = srm_model_class(srm_config).to(cpu_device)
+    # srm_ckpt = torch.load(srm_model_path, map_location=cpu_device)
+    # srm_model.load_state_dict(srm_ckpt, strict=True)
+    # print('===> Load srm checkpoint done!')
         
-    with open(ucf_detector_path, 'r') as f:
-        ucf_config = yaml.safe_load(f)
-    ucf_config['weights_path'] = ucf_model_path
-    # # prepare the model (UCF_detector)
-    ucf_model_class = DETECTOR[ucf_config['model_name']]
-    ucf_model = ucf_model_class(ucf_config).to(mps_device)
-    ucf_ckpt = torch.load(ucf_model_path, map_location=mps_device)
-    ucf_model.load_state_dict(ucf_ckpt, strict=True)
-    print('===> Load UCF checkpoint done!')
+    # with open(ucf_detector_path, 'r') as f:
+    #     ucf_config = yaml.safe_load(f)
+    # ucf_config['weights_path'] = ucf_model_path
+    # # # prepare the model (UCF_detector)
+    # ucf_model_class = DETECTOR[ucf_config['model_name']]
+    # ucf_model = ucf_model_class(ucf_config).to(mps_device)
+    # ucf_ckpt = torch.load(ucf_model_path, map_location=mps_device)
+    # ucf_model.load_state_dict(ucf_ckpt, strict=True)
+    # print('===> Load UCF checkpoint done!')
         
-    with open(xception_detector_path, 'r') as f:
-        xception_config = yaml.safe_load(f)
-    xception_config['weights_path'] = xception_model_path
-    # # prepare the model (xceptionL_detector)
-    xception_model_class = DETECTOR[xception_config['model_name']]
-    xception_model = xception_model_class(xception_config).to(mps_device)
-    xception_ckpt = torch.load(xception_model_path, map_location=mps_device)
-    xception_model.load_state_dict(xception_ckpt, strict=True)
-    print('===> Load xception checkpoint done!')
+    # with open(xception_detector_path, 'r') as f:
+    #     xception_config = yaml.safe_load(f)
+    # xception_config['weights_path'] = xception_model_path
+    # # # prepare the model (xceptionL_detector)
+    # xception_model_class = DETECTOR[xception_config['model_name']]
+    # xception_model = xception_model_class(xception_config).to(mps_device)
+    # xception_ckpt = torch.load(xception_model_path, map_location=mps_device)
+    # xception_model.load_state_dict(xception_ckpt, strict=True)
+    # print('===> Load xception checkpoint done!')
 
     
 
@@ -376,22 +376,22 @@ def main():
     
 
 
-    models=[
-        capsule_net_model,
-            core_model,
-            efficientnetb4_model,
-            f3net_model,
-            ffd_model,
-            fwa_model,
-            meso4_model,
-            resnet34_model,
-            spsl_model
-            ,srm_model
-            ,ucf_model,
-            xception_model
-            ]
+    # models=[
+    #     capsule_net_model,
+    #         core_model,
+    #         efficientnetb4_model,
+    #         f3net_model,
+    #         ffd_model,
+    #         fwa_model,
+    #         meso4_model,
+    #         resnet34_model,
+    #         spsl_model
+    #         ,srm_model
+    #         ,ucf_model,
+    #         xception_model
+    #         ]
     
-    
+    models=[capsule_net_model,core_model,fwa_model]
     
     # # start training
     test_epoch(models, test_data_loaders)
